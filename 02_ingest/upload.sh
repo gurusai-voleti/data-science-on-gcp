@@ -9,5 +9,5 @@ BUCKET=$1
 
 echo "Uploading to bucket $BUCKET..."
 gcloud storage cp *.csv gs://$BUCKET/flights/raw/
-#gcloud storage objects update --recursive --add-acl-grant=allUsers:R gs://$BUCKET/flights/raw
-#gcloud storage objects update --recursive --add-acl-grant=google.com:R gs://$BUCKET/flights/raw
+# gcloud storage objects update "gs://$BUCKET/flights/raw/**" --add-acl-grant=entity=allUsers,role=READER
+# gcloud storage objects update "gs://$BUCKET/flights/raw/**" --add-acl-grant=entity=domain-google.com,role=READER
