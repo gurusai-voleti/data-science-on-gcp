@@ -8,6 +8,6 @@ fi
 BUCKET=$1
 
 echo "Uploading to bucket $BUCKET..."
-gsutil -m cp *.csv gs://$BUCKET/flights/raw/
-#gsutil -m acl ch -R -g allUsers:R gs://$BUCKET/flights/raw
-#gsutil -m acl ch -R -g google.com:R gs://$BUCKET/flights/raw
+gcloud storage cp *.csv gs://$BUCKET/flights/raw/
+#gcloud storage objects update --recursive --add-acl-grant=allUsers:R gs://$BUCKET/flights/raw
+#gcloud storage objects update --recursive --add-acl-grant=google.com:R gs://$BUCKET/flights/raw
